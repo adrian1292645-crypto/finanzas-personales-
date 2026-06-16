@@ -15,6 +15,7 @@ import '../stats/stats_screen.dart';
 import '../transaction/add_transaction_screen.dart';
 import 'widgets/accounts_horizontal_list.dart';
 import 'widgets/balance_card.dart';
+import 'widgets/financial_health_card.dart';
 import 'widgets/recent_transactions_list.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
@@ -166,6 +167,11 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                   error: (e, _) => _ErrorBanner(message: e.toString()),
                 ),
               ),
+            ),
+
+            // ── Salud financiera ─────────────────────────
+            const SliverToBoxAdapter(
+              child: FinancialHealthCard(),
             ),
 
             // ── Resumen del mes (Ingresos / Gastos) ──────
